@@ -378,14 +378,14 @@ h2 {
 
 /* REVEAL ANIMATIONS */
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
 }
 
 .reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card.reveal-left {
@@ -406,11 +406,11 @@ h2 {
 }
 
 .project-links {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 .project-links span {
-  margin-left: auto;
+    margin-left: auto;
 }
 
 
@@ -436,25 +436,59 @@ h2 {
     font-weight: 700;
 }
 
-@media (max-width: 768px) {
-    html, body {
-    overflow-x: hidden;
-    /* overflow-y: hidden; */
-  }
 
-  .navbar {
+/* STICKY HIRE ME CTA */
+.hire-cta {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 99999;
-    background: #fff;
-  }
+    right: 30px;
+    bottom: 30px;
+    background: #2ECC71;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* box-shadow: 0 12px 25px rgba(46, 204, 113, 0.45); */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  body {
-     padding-top: 70px;
-  }
+.hire-cta:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 18px 35px rgba(46, 204, 113, 0.6);
+}
+
+.hire-cta i {
+    font-size: 0.95rem;
+}
+
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        /* overflow-y: hidden; */
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 99999;
+        background: #fff;
+    }
+
+    body {
+        padding-top: 70px;
+    }
 
 
     /* GENERAL */
@@ -529,5 +563,17 @@ h2 {
 
     .contact-icons {
         justify-content: center;
+    }
+
+
+
+
+
+
+    .hire-cta {
+        right: 16px;
+        bottom: 16px;
+        padding: 12px 16px;
+        font-size: 0.85rem;
     }
 }
