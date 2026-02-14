@@ -38,6 +38,24 @@ body {
     box-shadow: 0 6px 15px rgba(46, 204, 113, 0.5), 0 0 10px rgba(46, 204, 113, 0.4);
 }
 
+.resume-btn {
+    /* margin-top: 20px; */
+    display: flex;
+    justify-content: flex-end;
+    width: fit-content;
+    background-color: #2ECC71;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.resume-btn i {
+  margin-right: 8px;          
+  margin-top: 2px;
+}
+
 /* NAVBAR */
 .navbar {
     background: #fff;
@@ -107,7 +125,7 @@ h2 {
     color: #6b7280;
     margin-bottom: 20px;
     font-weight: 600;
-    margin-top: 15px;
+    margin-top: 70px;
 }
 
 #typing-role::after {
@@ -135,6 +153,7 @@ h2 {
     font-size: 1rem;
     color: #6b7280;
     line-height: 1.7;
+    margin-bottom: 14px;
 }
 
 /* PROJECTS */
@@ -166,14 +185,6 @@ h2 {
 .project-card.reveal-right.active {
     transform: translateX(0);
     opacity: 1;
-}
-
-.project-card.reveal-left {
-    transform: translateX(-20px);
-}
-
-.project-card.reveal-right {
-    transform: translateX(20px);
 }
 
 .project-card img {
@@ -432,7 +443,7 @@ h2 {
     transform: translateY(0);
 }
 
-/* .project-card.reveal-left {
+.project-card.reveal-left {
     opacity: 0;
     transform: translateX(-40px);
     transition: all 0.8s ease-out;
@@ -455,7 +466,7 @@ h2 {
 
 .project-links span {
     margin-left: auto;
-} */
+}
 
 
 .availability {
