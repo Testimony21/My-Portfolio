@@ -94,11 +94,30 @@ h2 {
     color: #2ECC71;
 }
 
-.about-text h2 {
+.about-text h1 {
     font-size: 3rem;
     line-height: 1.15;
-    margin-top: 12px;
+    margin-top: 15px;
     text-align: left;
+}
+
+.about-text h2 {
+    text-align: left;
+    font-size: 1.4rem;
+    color: #6b7280;
+    margin-bottom: 20px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+#typing-role::after {
+  content: "|";
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
 /* RIGHT */
@@ -126,10 +145,35 @@ h2 {
 }
 
 .project-card {
+    opacity: 0;
     background: #0f172a;
     border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.project-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card.reveal-left.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.project-card.reveal-right.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.project-card.reveal-left {
+    transform: translateX(-20px);
+}
+
+.project-card.reveal-right {
+    transform: translateX(20px);
 }
 
 .project-card img {
@@ -379,8 +423,8 @@ h2 {
 /* REVEAL ANIMATIONS */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease;
+    transform: none;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.active {
@@ -388,7 +432,7 @@ h2 {
     transform: translateY(0);
 }
 
-.project-card.reveal-left {
+/* .project-card.reveal-left {
     opacity: 0;
     transform: translateX(-40px);
     transition: all 0.8s ease-out;
@@ -411,7 +455,7 @@ h2 {
 
 .project-links span {
     margin-left: auto;
-}
+} */
 
 
 .availability {
