@@ -52,8 +52,8 @@ body {
 }
 
 .resume-btn i {
-  margin-right: 8px;          
-  margin-top: 2px;
+    margin-right: 8px;
+    margin-top: 2px;
 }
 
 /* NAVBAR */
@@ -129,13 +129,15 @@ h2 {
 }
 
 #typing-role::after {
-  content: "|";
-  margin-left: 4px;
-  animation: blink 1s infinite;
+    content: "|";
+    margin-left: 4px;
+    animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
 /* RIGHT */
@@ -164,17 +166,17 @@ h2 {
 }
 
 .project-card {
-    opacity: 0;
+    opacity: .6;
     background: #0f172a;
     border-radius: 16px;
     overflow: hidden;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(40px) scale(.98);
+    transition: all 0.5s ease;
 }
 
 .project-card.active {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .project-card.reveal-left.active {
@@ -263,7 +265,23 @@ h2 {
     background: #fff;
     padding: 18px;
     border-radius: 12px;
+
+    opacity: .6;
+    transform: translateY(40px) scale(.98); 
+    transition: all 0.6s ease;
 }
+
+.skill-card.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.skill-card.active:nth-child(1){transition-delay:.1s;}
+.skill-card.active:nth-child(2){transition-delay:.2s;}
+.skill-card.active:nth-child(3){transition-delay:.3s;}
+.skill-card.active:nth-child(4){transition-delay:.4s;}
+.skill-card.active:nth-child(5){transition-delay:.5s;}
+.skill-card.active:nth-child(6){transition-delay:.6s;}
 
 .skill-card h4 {
     font-size: 0.95rem;
@@ -282,6 +300,49 @@ h2 {
     background: #2ECC71;
     width: 0;
     transition: width 1.5s ease;
+}
+
+.skill-card {
+    background: #fff;
+    padding: 22px 18px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: #2ECC71;
+    margin-bottom: 10px;
+}
+
+.skill-card:hover .fa-html5 {
+    color: #E44D26;
+}
+
+.skill-card:hover .fa-css3-alt {
+    color: #264de4;
+}
+
+.skill-card:hover .fa-js {
+    color: #f0db4f;
+}
+
+.skill-card:hover .fa-react {
+    color: #61DBFB;
+}
+
+.skill-card:hover .fa-node-js {
+    color: #68A063;
+}
+
+.skill-card:hover .fa-database {
+    color: #4DB33D;
 }
 
 /* CONTACT */
@@ -433,13 +494,12 @@ h2 {
 
 /* REVEAL ANIMATIONS */
 .reveal {
-    opacity: 0;
-    transform: none;
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 1;
+    transform: translateY(40px);
+    transition: transform 0.7s ease-out;
 }
 
 .reveal.active {
-    opacity: 1;
     transform: translateY(0);
 }
 

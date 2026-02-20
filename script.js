@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const reveals = document.querySelectorAll(".reveal");
   const projects = document.querySelectorAll(".project-card");
   const skills = document.querySelectorAll(".skill-card");
+  // const contacts = document.querySelectorAll(".contact-grid");
   const roleText = "Front-End & MERN Stack Developer";
   const roleElement = document.getElementById("typing-role");
 
@@ -45,35 +46,67 @@ document.addEventListener("DOMContentLoaded", () => {
   function revealOnScroll() {
     const windowHeight = window.innerHeight;
 
-    // General reveals
     reveals.forEach(el => {
       const top = el.getBoundingClientRect().top;
-      if (top < windowHeight - 100) {
-        el.classList.add("active");
+      if (top < windowHeight - 120) {
+        if (!el.classList.contains("active")) {
+          el.classList.add("active");
+        }
       }
     });
 
-    // Project cards (left & right)
     projects.forEach(card => {
+      const top = card.getBoundingClientRect().top;
+      if (top < window.innerHeight - 120) {
+        card.classList.add("active");
+      }
+    });
+
+    skills.forEach(card => {
       const top = card.getBoundingClientRect().top;
       if (top < window.innerHeight - 100) {
         card.classList.add("active");
       }
     });
+
   }
+
+  //   function revealOnScroll() {
+  //   const triggerBottom = window.innerHeight * 0.85;
+
+  //   skills.forEach(card => {
+  //     const cardTop = card.getBoundingClientRect().top;
+
+  //     if (cardTop < triggerBottom) {
+  //       card.classList.add("active");
+  //     } else {
+  //       card.classList.remove("active");
+  //     }
+  //   });
+
+  //   projects.forEach(card => {
+  //     const cardTop = card.getBoundingClientRect().top;
+
+  //     if (cardTop < triggerBottom) {
+  //       card.classList.add("active");
+  //     } else {
+  //       card.classList.remove("active");
+  //     }
+  //   });
+  // }
 
   let i = 0;
   let deleting = false;
   function typeRole() {
     if (!roleElement) return;
 
-    if (!deleting && i <=roleText.length) {
+    if (!deleting && i <= roleText.length) {
       roleElement.textContent = roleText.substring(0, i);
       i++;
       setTimeout(typeRole, 60);
     }
-    else if (deleting && i >=0) {
-      roleElement.textContent = roleText.substring(0, i); 
+    else if (deleting && i >= 0) {
+      roleElement.textContent = roleText.substring(0, i);
       i--;
       setTimeout(typeRole, 35);
     }
